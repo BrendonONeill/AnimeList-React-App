@@ -1,0 +1,144 @@
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body
+{
+  background-color: #8D24C9;
+}
+
+.container
+{
+  display: flex;
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+.filter-bar
+{
+  width: 15%;
+  border-radius: 0 20px 20px 0;
+  background-color: #3d2558;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+}
+
+.filter-content
+{
+  height: 100px;
+  width: 80%;
+  border-bottom: 3px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainContainer
+{
+  border-radius: 20px;
+  color: aliceblue;
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 20px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.card
+{
+  background-color: white;
+  color: black;
+  margin-top: 50px;
+  width: 300px;
+  height: 500px;
+  border-radius: 20px 20px 0 0;
+  text-align: center;
+  box-shadow: 10px 10px 10px black;
+  position: relative;
+  cursor: pointer;
+
+}
+
+.image-section
+{
+  height: 395;
+  width: 100%;
+}
+.name-section
+{
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+
+img
+{
+  border-radius: 20px 20px 0 0;
+}
+
+.score
+{
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  font-weight: bold;
+  border-radius: 40px;
+  padding: 5px 20px;
+  background-color: #8D56C9;
+  color: white;
+ 
+}
+
+.place
+{
+  position: absolute;
+  top:  -10px;
+  left: -10px;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 15px 20px;
+  background-color: white;
+  color: black;
+  border: 3px solid black;
+}
+
+.navbar
+{
+  height: 10vh;
+  width: 100%;
+  background-color: #29193B;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 80px;
+}
+
+.card-information
+{
+  background-color: white;
+  color: black;
+  height: 80vh;
+  width: 80%;
+  border-radius: 20px;
+  margin: auto;
+  border: 3px solid #29193B;
+  margin-top: 200px;
+  margin-bottom: 200px;
+}
