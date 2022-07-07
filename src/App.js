@@ -1,10 +1,15 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
 import './App.css';
+import CardList from './Components/CardList';
+import Footer from './Components/Footer';
+import Header from './Components/Header';
+import InfoCard from './Components/InfoCard';
+import Navbar from './Components/Navbar';
 
 function App() {
 
- 
+  const [idCode, setIdCode] = useState(0)
   const [items, setItems] = useState([]);
   const genres = [
     {
@@ -61,59 +66,29 @@ function App() {
   {
     const infofetch = await fetch('https://api.jikan.moe/v4/top/anime')
     .then(res => res.json())
-
     setItems(infofetch.data)
   }
 
+  const cardSelect = (mal_id) =>
+  {
+    console.log(mal_id)
+    setIdCode(mal_id)
+  }
   
-
-
   useEffect(() => {
-    info() 
+    info()
   },[])
   
-  console.log('testing....'+ items)
+  console.log(items)
   return (
     <>
-    <nav className='navbar'><h1>Anime List</h1></nav>
+    <Header />
     <main className='container'>
-    <div className='filter-bar'>
-      
-      {genres.map((genre) => (
-      <div className='filter-content'>
-      <h2 key={genre.id}>{genre.name}</h2>
-      </div>
-      ))}
-      
-    </div>
-    <div className='mainContainer'> 
-      {items.map(item => (
-        <div className='card'>
-          <div className='image-section'>
-          <img src={item.images.jpg.large_image_url} alt="Girl in a jacket" width="300" height="395"/>
-          </div>
-          <div className='name-section'>
-          <h3>{item.title}</h3>
-          </div>
-          <p className='score'>{item.score}</p>
-          <p className='place'>{item.rank}</p>
-        </div>
-      ))}
-    </div>
+    <Navbar genres={genres} />
+    <CardList  items={items} cardSelect={cardSelect}/>
     </main>
-    <div className='card-information'>
-      {(items.length > 0)?<h2>{items[3].title}</h2>: ''}
-      <div className='main-information'>
-        <img />
-        
-
-      </div>
-      <div className='second-information'>
-
-      </div>
-
-
-    </div>
+    <InfoCard items={items} id={idCode}/>
+    <Footer />
     </>
   );
 }
