@@ -1,38 +1,171 @@
-.App {
-  text-align: center;
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body
+{
+  background-color: #8D24C9;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container
+{
+  display: flex;
+  width: 100%;
+  height: auto;
+  margin-top: 20px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.filter-bar
+{
+  width: 15%;
+  border-radius: 0 20px 20px 0;
+  background-color: #3d2558;
+  color: white;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+}
+
+.filter-content
+{
+  height: 100px;
+  width: 80%;
+  border-bottom: 3px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainContainer
+{
+  border-radius: 20px;
+  color: aliceblue;
+  width: 80%;
+  min-height: 80vh;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding: 20px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.card
+{
+  background-color: white;
+  color: black;
+  margin-top: 50px;
+  width: 300px;
+  height: 500px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  position: relative;
+  cursor: pointer;
+
+}
+
+.image-section
+{
+  height: 395;
+  width: 100%;
+}
+.name-section
+{
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+
+img
+{
+  border-radius: 20px 20px 0 0;
+}
+
+.score
+{
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  font-weight: bold;
+  border-radius: 40px;
+  padding: 5px 20px;
+  background-color: #8D56C9;
+  color: white;
+ 
+}
+
+.place
+{
+  position: absolute;
+  top:  -10px;
+  left: -10px;
+  font-weight: bold;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background-color: white;
+  color: black;
+  border: 3px solid black;
+}
+
+.header
+{
+  height: 10vh;
+  width: 100%;
+  background-color: #29193B;
   color: white;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 50px;
+  align-items: center;
+  font-size: 80px;
+}
+.inputStyles
+{
+  padding: 20px;
+  font-size: bold;
+  font-size: 20px;
+  background-color: white;
+  width: 400px;
+  height: 30%;
+  border-radius: 20px 5px 5px 20px;
+  border: 3px solid #8D56C9;
 }
 
-.App-link {
-  color: #61dafb;
+.card-information
+{
+  background-color: white;
+  color: black;
+  height: 1000px;
+  width: 800px;
+  border-radius: 20px;
+  border: 3px solid #29193B;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.buttons-page
+{
+  background-color: #29193B;
+  display: flex;
+  width: 50%;
+  margin: auto;
+  height: 100px;
 }
