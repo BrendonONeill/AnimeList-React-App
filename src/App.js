@@ -13,51 +13,64 @@ function App() {
   const genres = [
     {
       name: "Action",
-      id: 1
+      id: 1,
+      to: '/Action'
     },
     {
       name: "Adventure",
-      id: 2
+      id: 2,
+      to: '/Adventure'
+
     },
     {
       name:  "Comedy",
-      id: 3
+      id: 3,
+      to: '/Comedy'
     },
     {
       name: "Drama",
-      id: 4
+      id: 4,
+      to: '/Drama'
     },
     {
       name: "Fantasy",
-      id: 5
+      id: 5,
+      to: '/Fantasy'
     },
     {
       name:  "Horror",
-      id: 6
+      id: 6,
+      to: '/Horror'
     },
     {
       name:  "Mystery",
-      id: 7
+      id: 7,
+      to: '/Mystery'
     },
     {
       name: "Romance",
-      id: 8
+      id: 8,
+      to: '/Romance'
     },
     {
       name: "Sci-Fi",
-      id: 9
+      id: 9,
+      to: '/Sci-Fi'
     },
     {
       name:  "Slice of Life",
-      id: 10
+      id: 10,
+      to: '/Slice of Life'
     },
     {
-      name:   "Supernatural",
-      id: 11
+      name:  "Supernatural",
+      id: 11,
+      to: '/Supernatural'
     },
     {
       name:  "Suspense",
-      id: 12
+      id: 12,
+      to: '/Suspense'
     }
     ]
 

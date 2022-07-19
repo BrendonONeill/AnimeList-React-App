@@ -13,7 +13,8 @@ function SearchBar() {
   return (
     <>
     <form onSubmit={searchSumbit}>
-    <input className="inputStyles"  input='text' value={searchInput} placeholder="Cat" onChange={(e) => setSearchInput(e.target.value)} />  
+    <input className="inputStyles"  input='text' value={searchInput} placeholder="Cat" onChange={(e) => setSearchInput(e.target.value)} />
+    <button className='input-buttonStyles' type="submit">Look</button> 
     </form>
     </>
   )

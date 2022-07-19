@@ -14,18 +14,20 @@ body
 {
   display: flex;
   width: 100%;
-  height: auto;
+  height: 100%;
   margin-top: 20px;
 }
 .filter-bar
 {
   width: 15%;
+  height: 100%;
+  padding-bottom: 100px;
   border-radius: 0 20px 20px 0;
   background-color: #3d2558;
   color: white;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content:space-evenly;
   align-items: center;
 
 }
@@ -131,9 +133,15 @@ img
   text-align: center;
   display: flex;
   justify-content: space-between;
-  padding: 0 50px;
+  padding: 0 100px;
   align-items: center;
-  font-size: 80px;
+  font-size: 60px;
+}
+
+.header a
+{
+  color: white;
+  text-decoration: none;
 }
 .inputStyles
 {
@@ -141,10 +149,16 @@ img
   font-size: bold;
   font-size: 20px;
   background-color: white;
-  width: 400px;
-  height: 30%;
+  width: 300px;
+  min-height: 70px;
   border-radius: 20px 5px 5px 20px;
   border: 3px solid #8D56C9;
+}
+.input-buttonStyles
+{
+  width: 50px;
+  min-height: 70px;
+  border: none;
 }
 
 .card-information
@@ -152,7 +166,7 @@ img
   background-color: white;
   color: black;
   height: 1000px;
-  width: 800px;
+  width: 1200px;
   border-radius: 20px;
   border: 3px solid #29193B;
   margin: auto;
@@ -161,11 +175,60 @@ img
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
+.info-img
+{
+  display: inline;
+}
+
 .buttons-page
 {
-  background-color: #29193B;
+  color: white;
   display: flex;
-  width: 50%;
-  margin: auto;
-  height: 100px;
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50px auto;
+  height: 40px;
 }
+
+.buttons-page button
+{
+  background-color: #29193B;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.active
+{
+  background-color: #8D24C9;
+
+}
+
+.filter-content
+{
+  color: white;
+  text-decoration: none;
+  width: 80%;
+  text-align: center;
+  font-size: 20px;
+}
+
+.app-name
+{
+  font-size: 60px;
+}
+
+footer
+{
+  margin-top: 100px;
+  height: 10vh;
+  width: 100%;
+  background-color: #29193B;
+  color: white;
+  padding: 0 100px;
+  align-items: center;
+  font-size: 60px;
+}
+

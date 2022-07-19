@@ -14,6 +14,7 @@ function Main({genres, items, cardSelect, IncreasePage, DecreasePage, pagination
     <main className='container'>
     <Navbar genres={genres} />
     <CardList  items={items} cardSelect={cardSelect}/>
+    
     </main>
     <div className='buttons-page'>
     <button onClick={() => DecreasePage(pagination)}>{pagination - 1}</button>

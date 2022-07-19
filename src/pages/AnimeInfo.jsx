@@ -24,7 +24,10 @@ function AnimeInfo( {AnimeSearch}) {
   return (
     <>
     <Header  AnimeSearch={AnimeSearch} />
+    <main className='container'>
     <InfoCard item={cardInfo}  />
+    </main>
+    
     <Footer />
     </>
     
