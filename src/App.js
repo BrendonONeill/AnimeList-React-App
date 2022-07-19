@@ -1,94 +1,108 @@
 import { useEffect } from 'react';
 import { useState } from 'react';
+import {BrowserRouter as Router} from 'react-router-dom'
 import './App.css';
-import CardList from './Components/CardList';
-import Footer from './Components/Footer';
-import Header from './Components/Header';
-import InfoCard from './Components/InfoCard';
-import Navbar from './Components/Navbar';
+import Pages from './pages/Pages';
+
 
 function App() {
 
-  const [idCode, setIdCode] = useState(0)
   const [items, setItems] = useState([]);
+  const [pagination, setPagination] = useState(1)
+  
   const genres = [
     {
       name: "Action",
-      id: 1
+      id: 1,
+      to: '/Action'
     },
     {
       name: "Adventure",
-      id: 2
+      id: 2,
+      to: '/Adventure'
+
     },
     {
       name:  "Comedy",
-      id: 3
+      id: 3,
+      to: '/Comedy'
     },
     {
       name: "Drama",
-      id: 4
+      id: 4,
+      to: '/Drama'
     },
     {
       name: "Fantasy",
-      id: 5
+      id: 5,
+      to: '/Fantasy'
     },
     {
       name:  "Horror",
-      id: 6
+      id: 6,
+      to: '/Horror'
     },
     {
       name:  "Mystery",
-      id: 7
+      id: 7,
+      to: '/Mystery'
     },
     {
       name: "Romance",
-      id: 8
+      id: 8,
+      to: '/Romance'
     },
     {
       name: "Sci-Fi",
-      id: 9
+      id: 9,
+      to: '/Sci-Fi'
     },
     {
       name:  "Slice of Life",
-      id: 10
+      id: 10,
+      to: '/Slice of Life'
     },
     {
-      name:   "Supernatural",
-      id: 11
+      name:  "Supernatural",
+      id: 11,
+      to: '/Supernatural'
     },
     {
       name:  "Suspense",
-      id: 12
+      id: 12,
+      to: '/Suspense'
     }
     ]
 
   const info = async () =>
   {
-    const infofetch = await fetch('https://api.jikan.moe/v4/top/anime')
+    const infofetch = await fetch(`https://api.jikan.moe/v4/top/anime?page=${pagination}`)
     .then(res => res.json())
     setItems(infofetch.data)
   }
 
-  const cardSelect = (mal_id) =>
+  const IncreasePage = (prevstate) =>
   {
-    console.log(mal_id)
-    setIdCode(mal_id)
+    setPagination(prevstate + 1)
+  }
+
+  const DecreasePage = (prevstate) =>
+  {
+    setPagination(prevstate - 1)
   }
   
   useEffect(() => {
     info()
-  },[])
+  },[pagination])
+
+
   
   console.log(items)
   return (
     <>
-    <Header />
-    <main className='container'>
-    <Navbar genres={genres} />
-    <CardList  items={items} cardSelect={cardSelect}/>
-    </main>
-    <InfoCard items={items} id={idCode}/>
-    <Footer />
+    <Router>
+    <Pages pagination={pagination} genres={genres}  items={items} IncreasePage={IncreasePage} DecreasePage={DecreasePage} />
+    </Router>
     </>
   );
 }
