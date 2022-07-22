@@ -1,15 +1,25 @@
 import SearchBar from "./SearchBar"
 import {Link} from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
-function Header({ AnimeSearch, searchInput}) {
+function Header({displaySearchBar, searchBar,openNav, navReset}) {
   return (
 
     <header className='header'>
-      <h3>Logo</h3>
-      <Link to={'/'}>
+      <a >
+        <span className="burger"></span>
+        <span onClick={openNav} className="burger"></span>
+        <span className="burger"></span>
+      </a>
+      
+      <Link onClick={navReset} to={'/'}>
       <h1 className="app-name">Anime List</h1>
       </Link>
-      <SearchBar />
+      <a className="buttonHeader" onClick={displaySearchBar}><FontAwesomeIcon icon={faSearch} /> </a>
+     
+      
+      
     </header>
   )
 }

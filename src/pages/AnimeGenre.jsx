@@ -1,11 +1,12 @@
 import CardList from '../Components/CardList'
 import Header from '../Components/Header'
 import Navbar from '../Components/Navbar'
-import Footer from '../Components/Footer'
+import SubHeader from '../Components/SubHeader'
+
 import {useParams} from 'react-router-dom'
 import { useEffect, useState } from 'react';
 
-function AnimeGenre({genres, cardSelect, IncreasePage, DecreasePage, pagination}) {
+function AnimeGenre({genres, cardSelect, IncreasePage, DecreasePage, pagination,searchBar, displaySearchBar, activeNav, openNav, navReset}) {
 
     const [contents, setContents] = useState([]);
     const param = useParams();
@@ -15,21 +16,22 @@ function AnimeGenre({genres, cardSelect, IncreasePage, DecreasePage, pagination}
       .then(res => res.json())
       console.log(newContent.data)
       console.log('api called')
-      
       setContents(newContent.data)
     }
   
     
     
     useEffect(() => {
+
     searchedContent(param.genre)
     },[param.genre,pagination])
 
   return (
     <>
-    <Header />
+    <Header displaySearchBar={displaySearchBar} searchBar={searchBar} openNav={openNav}/>
+    { searchBar ? <SubHeader /> : null}
     <main className='container'>
-    <Navbar genres={genres} />
+    <Navbar activeNav={activeNav} genres={genres} navReset={navReset} />
     <CardList  items={contents} cardSelect={cardSelect}/>
     </main>
     <div className='buttons-page'>
@@ -37,7 +39,7 @@ function AnimeGenre({genres, cardSelect, IncreasePage, DecreasePage, pagination}
     <p>Page {pagination} </p>
     <button onClick={() =>IncreasePage(pagination)}>{pagination + 1}</button>
     </div>
-    <Footer />
+   
     </>
   )
 }

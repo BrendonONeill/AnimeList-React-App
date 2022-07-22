@@ -1,20 +1,23 @@
 import {useState} from 'react'
 import {useNavigate} from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 function SearchBar() {
     const [searchInput, setSearchInput] = useState('');
     const nav = useNavigate();
     const searchSumbit = (e) => {
-        console.log('hello')
         e.preventDefault();
-        nav('/search/'+ searchInput)
+        nav('/search/'+ searchInput)  
     };
+    const searchAnime = (e) => {setSearchInput(e.target.value)}
 
   return (
     <>
     <form onSubmit={searchSumbit}>
-    <input className="inputStyles"  input='text' value={searchInput} placeholder="Cat" onChange={(e) => setSearchInput(e.target.value)} />
-    <button className='input-buttonStyles' type="submit">Look</button> 
+    <input className="inputStyles"  input='text' value={searchInput} placeholder="Cat" 
+    onChange={searchAnime} />
+    <button className='input-buttonStyles' disabled={searchInput === ""} type="submit"><FontAwesomeIcon icon={faSearch} /></button> 
     </form>
     </>
   )

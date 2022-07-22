@@ -1,98 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Oswald&display=swap');
+
 *
 {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body
 {
-  background-color: #8D24C9;
+  background: rgba(141,36,201,1);
+  font-family: 'Oswald', sans-serif;
 }
+
+img
+{
+  max-width: 100%;
+}
+
+/* Header */
+.header
+{
+  height: 70px;
+  width: 100%;
+  background-color: #29193B;
+  color: white;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  align-items: center;
+  font-size: 20px;
+  position: fixed;
+  z-index: 1;
+}
+
+.header a
+{
+  color: white;
+  text-decoration: none;
+}
+
+.header button
+{
+  width: 10%;
+  height: 60%;
+  background-color: #29193B;
+}
+
+.burger
+{
+  display: block;
+  background-color: #fff;
+  margin-top: 5px;
+  height: 4px;
+  width: 30px;
+  
+  border-radius: 2px;
+}
+
+.searchHeader
+{
+  display: block;
+  width: 100%;
+  background-color: #8D56C9;
+}
+
+.inputStyles
+{
+  padding: 5px;
+  font-size: bold;
+  font-size: 16px;
+  background-color: #fff;
+  width: 200px;
+  min-height: 30px;
+  border-radius: 20px 5px 5px 20px;
+  border: 3px solid #8D56C9;
+  position: relative;
+}
+.input-buttonStyles
+{
+  width: 30px;
+  min-height: 30px;
+  border: none;
+}
+
+.buttonHeader
+{
+  padding: 5px;
+  color: #fff;
+}
+
+/* Sub Header */
+.subHeader
+{
+  height: 55px;
+  width: 100%;
+  background-color: #29193bd3;
+  color: white;
+  position: fixed;
+  z-index: 1;
+  top: 70px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 20px;
+  align-items: center;
+  font-size: 20px;
+}
+
+/* Main  */
 
 .container
 {
-  display: flex;
+  padding-top:80px;
+  background-color:#8D24C9;
   width: 100%;
   height: 100%;
-  margin-top: 20px;
 }
-.filter-bar
-{
-  width: 15%;
-  height: 100%;
-  padding-bottom: 100px;
-  border-radius: 0 20px 20px 0;
-  background-color: #3d2558;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content:space-evenly;
-  align-items: center;
-
-}
-
-.filter-content
-{
-  height: 100px;
-  width: 80%;
-  border-bottom: 3px solid white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .mainContainer
 {
-  border-radius: 20px;
-  color: aliceblue;
-  width: 80%;
-  min-height: 80vh;
-  margin: auto;
+  max-width: 100%;
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
-  padding: 20px;
   align-items: flex-start;
-  justify-content: center;
+  justify-content:space-around;
+  position: relative;
 }
 
+.stopScroll
+{
+  position: fixed;
+}
+
+
+/* card */
 .card
 {
   background-color: white;
   color: black;
   margin-top: 50px;
-  width: 300px;
-  height: 500px;
+  width: 160px;
+  height: 260px;
   border-radius: 20px;
   text-align: center;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   position: relative;
   cursor: pointer;
-
+  transition: transform 0.25s ease-in-out;
 }
 
 .image-section
 {
-  height: 395;
-  width: 100%;
+ width: 100%;
+ height: 70%;
 }
 .name-section
 {
-  height: 20%;
   display: flex;
+  align-items: center;
   justify-content: center;
-  align-items: flex-start;
-  padding: 20px;
-  text-overflow: ellipsis;
-  overflow: hidden;
+ height: 30%;
+ width: 100%;
 }
 
-
-img
+.image-section img
 {
   border-radius: 20px 20px 0 0;
+  width: 100%;
+  height: 100%; 
+  object-fit: fill;
 }
+
 
 .score
 {
@@ -101,8 +178,8 @@ img
   right: -20px;
   font-weight: bold;
   border-radius: 40px;
-  padding: 5px 20px;
-  background-color: #8D56C9;
+  padding: 10px 25px;
+  background-color: #3d2558;
   color: white;
  
 }
@@ -121,52 +198,60 @@ img
   justify-content: center;
   background-color: white;
   color: black;
-  border: 3px solid black;
+  border: 1px solid grey;
+  box-shadow: 0 5px 20px 5px #29193B;
 }
 
-.header
+
+
+
+
+
+
+.filter-bar
 {
-  height: 10vh;
-  width: 100%;
-  background-color: #29193B;
+  padding: 20px 20px 5px 0px;
+  width: 80%;
+  z-index: 2;
+  position: fixed;
+  top: 70px;
+  left: -100%;
+  height: 100%;
+  padding-bottom: 100px;
+  border-radius: 0 5px 5px 0;
+  background-color: #3d2558;
   color: white;
-  text-align: center;
   display: flex;
-  justify-content: space-between;
-  padding: 0 100px;
-  align-items: center;
-  font-size: 60px;
+  flex-direction: column;
+  justify-content:space-evenly;
+  align-items: flex-start;
+  
+
 }
 
-.header a
+.navActive
 {
+  left: 0;
+}
+
+.filter-content
+{
+  height: 150px;
+  width: 100%;
+  font-size: 20px;
   color: white;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.inputStyles
-{
-  padding: 20px;
-  font-size: bold;
-  font-size: 20px;
-  background-color: white;
-  width: 300px;
-  min-height: 70px;
-  border-radius: 20px 5px 5px 20px;
-  border: 3px solid #8D56C9;
-}
-.input-buttonStyles
-{
-  width: 50px;
-  min-height: 70px;
-  border: none;
-}
+
 
 .card-information
 {
   background-color: white;
   color: black;
-  height: 1000px;
-  width: 1200px;
+  width: 100%;
   border-radius: 20px;
   border: 3px solid #29193B;
   margin: auto;
@@ -189,7 +274,10 @@ img
   justify-content: space-between;
   align-items: center;
   margin: 50px auto;
-  height: 40px;
+  height: 60px;
+  background-color: #8D56C9;
+  padding: 20px 10px;
+  border-radius: 10px;
 }
 
 .buttons-page button
@@ -203,32 +291,77 @@ img
 .active
 {
   background-color: #8D24C9;
-
+  border-radius: 0 10px 10px 0;
 }
 
-.filter-content
-{
-  color: white;
-  text-decoration: none;
-  width: 80%;
-  text-align: center;
-  font-size: 20px;
-}
+
 
 .app-name
 {
-  font-size: 60px;
+  font-size: 30px;
 }
 
-footer
+
+
+.card:hover
 {
-  margin-top: 100px;
-  height: 10vh;
-  width: 100%;
-  background-color: #29193B;
-  color: white;
-  padding: 0 100px;
-  align-items: center;
-  font-size: 60px;
+  transform: scale(1.05);
+
 }
 
+@media only screen and (min-width: 500px ) {
+
+
+  .mainContainer
+  {
+    gap: 10px;
+  }
+
+  .card
+  {
+    width: 200px;
+    height: 300px;
+  }
+
+}
+
+@media only screen and (min-width: 800px ) {
+
+
+  .mainContainer
+  {
+    gap: 10px;
+    width: 75%;
+  }
+
+  .filter-bar
+  {
+  width: 20%;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  }
+
+  .filter-content
+{
+  height: 100px;
+  width: 100%;
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+  .container
+{
+  padding-top:80px;
+  background-color:#8D24C9;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+}

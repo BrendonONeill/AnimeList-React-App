@@ -1,12 +1,14 @@
 import { NavLink } from "react-router-dom"
 
-function Navbar({genres}) {
+function Navbar({genres, activeNav, navReset}) {
+
+  
   return (
-    <nav className='filter-bar'>
+    <nav className={activeNav ?'filter-bar navActive': 'filter-bar'}>
       
       {genres.map((genre) => (
-      <NavLink className='filter-content' key={genre.id} to={`/genres/${genre.id.toString()}`}>
-      <div>
+      <NavLink onClick={navReset} className='filter-content' key={genre.id} to={`/genres/${genre.id.toString()}`}>
+      <div >
       <h2>{genre.name}</h2>
       </div>
       </NavLink>

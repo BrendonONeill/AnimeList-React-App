@@ -1,11 +1,11 @@
 import CardList from "../Components/CardList"
-import Footer from "../Components/Footer"
 import Header from "../Components/Header"
 import {useParams} from 'react-router-dom'
 import { useEffect, useState } from 'react';
+import SubHeader from "../Components/SubHeader";
 
 
-function AnimeSearch({cardSelect}) {
+function AnimeSearch({cardSelect,searchBar, displaySearchBar, activeNav, openNav}) {
 
     const [contents, setContents] = useState([]);
     const param = useParams();
@@ -24,11 +24,11 @@ function AnimeSearch({cardSelect}) {
     },[param.name])
   return (
     <>
-    <Header />
-    <div className="main">
+    <Header displaySearchBar={displaySearchBar} searchBar={searchBar} openNav={openNav}/>
+    { searchBar ? <SubHeader /> : null}
+    <div className="container">
     <CardList items={contents}  cardSelect={cardSelect}/>
     </div>
-    <Footer />
     </>
   )
 }

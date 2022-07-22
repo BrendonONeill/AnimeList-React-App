@@ -2,7 +2,7 @@ import Header from "../Components/Header"
 import InfoCard from "../Components/InfoCard"
 import {useState, useEffect, } from 'react'
 import {useParams} from 'react-router-dom'
-import Footer from "../Components/Footer"
+
 
 function AnimeInfo( {AnimeSearch}) {
 
@@ -28,7 +28,7 @@ function AnimeInfo( {AnimeSearch}) {
     <InfoCard item={cardInfo}  />
     </main>
     
-    <Footer />
+    
     </>
     
     

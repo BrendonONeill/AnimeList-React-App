@@ -1,19 +1,21 @@
 import CardList from '../Components/CardList'
 import Header from '../Components/Header'
 import Navbar from '../Components/Navbar'
-import Footer from '../Components/Footer'
+import SubHeader from '../Components/SubHeader'
 
 
 
-function Main({genres, items, cardSelect, IncreasePage, DecreasePage, pagination}) {
+function Main({genres, items, cardSelect, IncreasePage, DecreasePage, pagination, searchBar, displaySearchBar, activeNav, openNav, navReset}) {
     
     
   return (
     <>
-    <Header />
+    <Header displaySearchBar={displaySearchBar} searchBar={searchBar} openNav={openNav} navReset={navReset}/>
+    { searchBar ? <SubHeader /> : null}
     <main className='container'>
-    <Navbar genres={genres} />
-    <CardList  items={items} cardSelect={cardSelect}/>
+    <Navbar activeNav={activeNav} genres={genres} navReset={navReset}  />
+    
+    <CardList  items={items} cardSelect={cardSelect} activeNav={activeNav}/>
     
     </main>
     <div className='buttons-page'>
@@ -21,8 +23,6 @@ function Main({genres, items, cardSelect, IncreasePage, DecreasePage, pagination
     <p>Page {pagination} </p>
     <button onClick={() =>IncreasePage(pagination)}>{pagination + 1}</button>
     </div>
-    
-    <Footer />
     </>
   )
 }

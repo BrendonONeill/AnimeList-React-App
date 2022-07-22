@@ -9,6 +9,7 @@ function App() {
 
   const [items, setItems] = useState([]);
   const [pagination, setPagination] = useState(1)
+ 
   
   const genres = [
     {
@@ -43,34 +44,14 @@ function App() {
       to: '/Horror'
     },
     {
-      name:  "Mystery",
-      id: 7,
-      to: '/Mystery'
-    },
-    {
       name: "Romance",
       id: 8,
       to: '/Romance'
     },
     {
-      name: "Sci-Fi",
-      id: 9,
-      to: '/Sci-Fi'
-    },
-    {
       name:  "Slice of Life",
       id: 10,
       to: '/Slice of Life'
-    },
-    {
-      name:  "Supernatural",
-      id: 11,
-      to: '/Supernatural'
-    },
-    {
-      name:  "Suspense",
-      id: 12,
-      to: '/Suspense'
     }
     ]
 
@@ -78,6 +59,7 @@ function App() {
   {
     const infofetch = await fetch(`https://api.jikan.moe/v4/top/anime?page=${pagination}`)
     .then(res => res.json())
+    console.log('This is an api call')
     setItems(infofetch.data)
   }
 
@@ -93,11 +75,15 @@ function App() {
   
   useEffect(() => {
     info()
+    window.scrollTo(0,0)
+    
   },[pagination])
 
+  
 
   
-  console.log(items)
+
+
   return (
     <>
     <Router>
