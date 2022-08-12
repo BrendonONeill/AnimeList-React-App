@@ -15,6 +15,7 @@ body
 img
 {
   max-width: 100%;
+  display: block;
 }
 
 /* Header */
@@ -249,21 +250,171 @@ img
 
 .card-information
 {
-  background-color: white;
-  color: black;
-  width: 100%;
+  background-color: #fff;
+  max-width: 90%;
+  margin-inline: auto;
+  padding-inline: 1rem;
+  padding-block: 2rem;
   border-radius: 20px;
-  border: 3px solid #29193B;
-  margin: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: 10px 10px 30px 5px #29193B;
 }
 
 .info-img
 {
-  display: inline;
+  margin: auto;
+  width: 60%;
+  height: auto;
+  margin-bottom: 1rem;
 }
+
+.card-info-headings
+{
+  margin-bottom: 0.8rem;
+  text-align: center;
+}
+
+
+.card-info-grid
+{
+  display: grid;
+  grid-template-areas: 
+  "score rank pop"
+  "score-num rank-num pop-num";
+  row-gap: 0.5rem;
+  column-gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-basis: 1 1;
+  border-top: 3px solid rgb(136, 135, 135);
+}
+
+.card-info-grid-two
+{
+  display: grid;
+  grid-template-areas: 
+  "rating"
+  "studio"
+  "studio-names"
+  "genres"
+  "genres-names" ;
+  row-gap: 0.4rem;
+  border-top: 5px double rgb(136, 135, 135);
+  margin-bottom: 1.2rem;
+  padding-top: 0.5rem;
+}
+
+.card-info-syn
+{
+  border-top: 5px double rgb(136, 135, 135);
+  padding-top: 0.5rem;
+  padding: 1rem;
+}
+
+.card-info-rating
+{
+  grid-area: reating;
+}
+
+.card-info-studio
+{
+  grid-area: studio;
+}
+
+.card-info-studio-names
+{
+  grid-area: studio-names;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.card-info-genres
+{
+  grid-area: genres;
+}
+
+.card-info-genres-names
+{
+  grid-area: genres-names;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+
+
+
+.card-info-pop
+{
+  grid-area: pop;
+  text-align: center;
+}
+
+.card-info-score
+{
+  grid-area: score;
+  text-align: center;
+}
+
+.card-info-rank
+{
+  grid-area: rank;
+  text-align: center;
+}
+
+.card-info-pop-num
+{
+  grid-area: pop-num;
+  text-align: center;
+}
+
+.card-info-score-num
+{
+  grid-area: score-num;
+  text-align: center;
+}
+
+.card-info-rank-num
+{
+  grid-area: rank-num;
+  text-align: center;
+}
+
+.card-info-button
+{
+  padding: 0.8rem;
+  margin: auto;
+  background-color: #8D24C9;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 10px;
+}
+
+.button-box
+{
+  margin-block: 2rem;
+  max-width: 40%;
+  margin-inline: auto;
+}
+
+.card-info-text-style-one
+{
+  font-weight: bold;
+}
+
+.card-info-text-style-two
+{
+  color: rgb(136, 135, 135);
+}
+
+.card-info-text-style-three
+{
+  border: 2px solid  rgb(136, 135, 135);
+  color: rgb(136, 135, 135);
+  border-radius: 10px;
+  padding: 0.2rem;
+}
+
+
 
 .buttons-page
 {
@@ -363,5 +514,8 @@ img
   height: 100%;
   display: flex;
 }
+
+
+
 
 }

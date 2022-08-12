@@ -50,7 +50,7 @@ function Pages({pagination, genres, items, IncreasePage, DecreasePage}) {
     <>
     <Routes>
         <Route path="/" element={<Main genres={genres}  items={items} cardSelect={cardSelect} IncreasePage={IncreasePage} DecreasePage={DecreasePage} pagination={pagination} searchBar={searchBar} displaySearchBar={displaySearchBar} activeNav={activeNav} openNav={openNav} navReset={navReset}/>}/>
-        <Route path="/:id" element={<AnimeInfo/>}/>
+        <Route path="/:id" element={<AnimeInfo searchBar={searchBar} displaySearchBar={displaySearchBar} activeNav={activeNav} openNav={openNav} genres={genres} />}/>
         <Route path="/search/:name" element={<AnimeSearch cardSelect={cardSelect} searchBar={searchBar} displaySearchBar={displaySearchBar} activeNav={activeNav} openNav={openNav}/>}/>
         <Route path="/genres/:genre" element={<AnimeGenre genres={genres} cardSelect={cardSelect} IncreasePage={IncreasePage} DecreasePage={DecreasePage} pagination={pagination} searchBar={searchBar} displaySearchBar={displaySearchBar} activeNav={activeNav} openNav={openNav} navReset={navReset}/>} />
     </Routes>

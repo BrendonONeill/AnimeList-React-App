@@ -2,9 +2,11 @@ import Header from "../Components/Header"
 import InfoCard from "../Components/InfoCard"
 import {useState, useEffect, } from 'react'
 import {useParams} from 'react-router-dom'
+import SubHeader from "../Components/SubHeader";
+import Navbar from '../Components/Navbar'
 
 
-function AnimeInfo( {AnimeSearch}) {
+function AnimeInfo( {AnimeSearch,searchBar, displaySearchBar, activeNav, openNav, genres, navReset}) {
 
     const [cardInfo, setCardInfo] = useState([])
     const params = useParams();
@@ -23,8 +25,10 @@ function AnimeInfo( {AnimeSearch}) {
 
   return (
     <>
-    <Header  AnimeSearch={AnimeSearch} />
+    <Header  AnimeSearch={AnimeSearch} displaySearchBar={displaySearchBar} searchBar={searchBar} openNav={openNav}/>
+    { searchBar ? <SubHeader /> : null}
     <main className='container'>
+    <Navbar activeNav={activeNav} genres={genres} navReset={navReset}  />
     <InfoCard item={cardInfo}  />
     </main>
     
