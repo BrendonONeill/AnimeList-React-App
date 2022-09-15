@@ -1,3 +1,6 @@
+import { useContext } from 'react';
+import { GlobalContext } from "../App"
+
 function Card({item, cardSelect}) {
   return (
     <div className='card' onClick={() => cardSelect(item.mal_id)}>

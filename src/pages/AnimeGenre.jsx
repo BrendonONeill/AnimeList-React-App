@@ -4,34 +4,34 @@ import Navbar from '../Components/Navbar'
 import SubHeader from '../Components/SubHeader'
 
 import {useParams} from 'react-router-dom'
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import { GlobalContext } from "../App"
 
-function AnimeGenre({genres, cardSelect, IncreasePage, DecreasePage, pagination,searchBar, displaySearchBar, activeNav, openNav, navReset}) {
+function AnimeGenre({ cardSelect}) {
 
+    const {pagination, IncreasePage, DecreasePage, searchBar} = useContext(GlobalContext)
     const [contents, setContents] = useState([]);
     const param = useParams();
-    const searchedContent = async () =>
-    {
-      const newContent = await fetch(`https://api.jikan.moe/v4/anime?order=4&sort=ascending&genres=${param.genre}&page=${pagination}&sfw`)
-      .then(res => res.json())
-      console.log(newContent.data)
-      console.log('api called')
-      setContents(newContent.data)
-    }
+    
   
-    
-    
     useEffect(() => {
-
+      const searchedContent = async () =>
+      {
+        const newContent = await fetch(`https://api.jikan.moe/v4/anime?order_by=score&sort=ascending&genres=${param.genre}&page=${pagination}&sfw`)
+        .then(res => res.json())
+        console.log(newContent.data)
+        console.log('api called')
+        setContents(newContent.data)
+      }
     searchedContent(param.genre)
     },[param.genre,pagination])
 
   return (
     <>
-    <Header displaySearchBar={displaySearchBar} searchBar={searchBar} openNav={openNav}/>
+    <Header />
     { searchBar ? <SubHeader /> : null}
     <main className='container'>
-    <Navbar activeNav={activeNav} genres={genres} navReset={navReset} />
+    <Navbar />
     <CardList  items={contents} cardSelect={cardSelect}/>
     </main>
     <div className='buttons-page'>

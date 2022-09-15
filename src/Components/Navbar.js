@@ -1,7 +1,10 @@
 import { NavLink } from "react-router-dom"
+import { useContext } from 'react';
+import { GlobalContext } from "../App"
 
-function Navbar({genres, activeNav, navReset}) {
+function Navbar() {
 
+  const { activeNav, genres, navReset} = useContext(GlobalContext)
   
   return (
     <nav className={activeNav ?'filter-bar navActive': 'filter-bar'}>
