@@ -1,14 +1,18 @@
-import { useEffect } from 'react';
-import { useState } from 'react';
+import { useEffect, useState, createContext } from 'react';
 import {BrowserRouter as Router} from 'react-router-dom'
 import './App.css';
 import Pages from './pages/Pages';
 
+export const GlobalContext = createContext({})
 
 function App() {
 
+  
+
   const [items, setItems] = useState([]);
   const [pagination, setPagination] = useState(1)
+  const [activeNav, setActiveNav] = useState(false)
+  const [searchBar, setSearchBar] = useState(false)
  
   
   const genres = [
@@ -25,43 +29,37 @@ function App() {
     },
     {
       name:  "Comedy",
-      id: 3,
+      id: 4,
       to: '/Comedy'
     },
     {
       name: "Drama",
-      id: 4,
+      id: 8,
       to: '/Drama'
     },
     {
       name: "Fantasy",
-      id: 5,
+      id: 10,
       to: '/Fantasy'
     },
     {
       name:  "Horror",
-      id: 6,
+      id: 14,
       to: '/Horror'
     },
     {
       name: "Romance",
-      id: 8,
+      id: 22,
       to: '/Romance'
     },
     {
       name:  "Slice of Life",
-      id: 10,
+      id: 36,
       to: '/Slice of Life'
     }
     ]
 
-  const info = async () =>
-  {
-    const infofetch = await fetch(`https://api.jikan.moe/v4/top/anime?page=${pagination}`)
-    .then(res => res.json())
-    console.log('This is an api call')
-    setItems(infofetch.data)
-  }
+ 
 
   const IncreasePage = (prevstate) =>
   {
@@ -74,10 +72,43 @@ function App() {
   }
   
   useEffect(() => {
+    const info = async () =>
+    {
+      const infofetch = await fetch(`https://api.jikan.moe/v4/top/anime?page=${pagination}`)
+      .then(res => res.json())
+      console.log('This is an api call')
+      setItems(infofetch.data)
+    }
     info()
     window.scrollTo(0,0)
     
   },[pagination])
+
+
+  ///////////////////////////////////
+  const openNav = () =>
+  {
+    if(searchBar === true)
+    {
+      setSearchBar(!searchBar)
+    }
+    console.log('burger clicked')
+    setActiveNav(!activeNav)
+  }
+
+  const displaySearchBar = () =>
+  {
+    if(activeNav === true)
+    {
+      setActiveNav(!activeNav)
+    }
+      setSearchBar(!searchBar) 
+  }
+  const navReset = () => 
+  {
+   setActiveNav(!activeNav) 
+  }
+
 
   
 
@@ -87,7 +118,9 @@ function App() {
   return (
     <>
     <Router>
-    <Pages pagination={pagination} genres={genres}  items={items} IncreasePage={IncreasePage} DecreasePage={DecreasePage} />
+    <GlobalContext.Provider value={{pagination, genres, items, IncreasePage, DecreasePage, activeNav, searchBar, openNav, displaySearchBar, navReset}}>
+    <Pages />
+    </GlobalContext.Provider>
     </Router>
     </>
   );

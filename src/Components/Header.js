@@ -2,8 +2,13 @@ import SearchBar from "./SearchBar"
 import {Link} from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { useContext } from 'react';
+import { GlobalContext } from "../App"
 
-function Header({displaySearchBar, searchBar,openNav, navReset}) {
+function Header() {
+
+  const { searchBar, openNav, displaySearchBar, navReset} = useContext(GlobalContext)
+
   return (
 
     <header className='header'>

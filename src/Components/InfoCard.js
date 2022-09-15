@@ -1,5 +1,7 @@
 
-function InfoCard({item, id}) {
+function InfoCard({item}) {
+
+  
   return (
     <div className='card-information'>
       
@@ -47,7 +49,7 @@ function InfoCard({item, id}) {
       <h3>Synopsis</h3>
       <p className="card-info-syn">{item.synopsis}</p>
       <div className="button-box">
-        <a className="card-info-button" href={item.url} target="_blank">
+        <a className="card-info-button" href={item.url} rel="noreferrer" target="_blank">
           More Information
         </a>
       </div>
