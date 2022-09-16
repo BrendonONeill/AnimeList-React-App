@@ -1,3 +1,6 @@
+# Added features
+useContext was updated and sorted and code was cleaned up. 
+
 # Updated CSS on some pages. 
 The phone design is mostly complete but
 ### Bugs
