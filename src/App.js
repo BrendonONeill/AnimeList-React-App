@@ -16,17 +16,8 @@ function App() {
  
   
   const genres = [
-    {
-      name: "Action",
-      id: 1,
-      to: '/Action'
-    },
-    {
-      name: "Adventure",
-      id: 2,
-      to: '/Adventure'
-
-    },
+    { name: "Action", id: 1, to: '/Action'},
+    { name: "Adventure", id: 2, to: '/Adventure'},
     {
       name:  "Comedy",
       id: 4,
@@ -104,9 +95,16 @@ function App() {
     }
       setSearchBar(!searchBar) 
   }
+
   const navReset = () => 
   {
-   setActiveNav(!activeNav) 
+   setActiveNav(false)
+   setSearchBar(false) 
+  }
+
+  const paginationReset = () =>
+  {
+    setPagination(1)
   }
 
 
@@ -118,7 +116,7 @@ function App() {
   return (
     <>
     <Router>
-    <GlobalContext.Provider value={{pagination, genres, items, IncreasePage, DecreasePage, activeNav, searchBar, openNav, displaySearchBar, navReset}}>
+    <GlobalContext.Provider value={{pagination, genres, items, IncreasePage, DecreasePage, activeNav, searchBar, openNav, displaySearchBar, navReset, paginationReset}}>
     <Pages />
     </GlobalContext.Provider>
     </Router>
