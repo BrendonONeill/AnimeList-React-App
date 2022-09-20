@@ -9,7 +9,7 @@ import Navbar from "../Components/Navbar";
 
 function AnimeSearch({cardSelect}) {
 
-    const { searchBar} = useContext(GlobalContext)
+    const {searchBar, navReset, paginationReset} = useContext(GlobalContext)
     const [contents, setContents] = useState([]);
     const param = useParams();
     
@@ -23,7 +23,13 @@ function AnimeSearch({cardSelect}) {
       setContents(newContent.data)
     }
     searchedContent(param.name)
+    console.log("nav was reset")
+    navReset()
     },[param.name])
+
+    useEffect(() => {
+      paginationReset()
+    },[])
     return (
     <>
     <Header />

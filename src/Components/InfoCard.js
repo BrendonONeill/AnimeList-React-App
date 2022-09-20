@@ -3,28 +3,33 @@ function InfoCard({item}) {
 
   
   return (
-    <div className='card-information'>
+    <>
+    {(item.length === 0) && <div className='loading'>
+    <h2 className="loading-data">Loading...</h2> 
+    </div>}
+    {(item.length !== 0) && <div className='card-information'>
       
       <div className='main-information'>
-      {(item.length !== 0) &&<img className="info-img" src= {item.images.jpg.large_image_url} alt={item.title} width="400" height="495"/>}
+      <img className="info-img" src= {item.images.jpg.large_image_url} alt={item.title} width="400" height="495"/>
       <h1 className="card-info-headings">{item.title}</h1>
-      <h2 className="card-info-headings">{item.title_japanese}</h2>
+      <h2 className="card-info-headings japanese-name">{item.title_japanese}</h2>
 
       <div className="card-info-grid">
-      <p className="card-info-score card-info-text-style-one">Score:</p>
+      <p className="card-info-score card-info-text-style-one card-grid-heading">Score</p>
+      <p className="card-info-rank card-info-text-style-one card-grid-heading">Ranked</p>
+      <p className="card-info-pop card-info-text-style-one card-grid-heading">Popularity</p>
+
       <p className="card-info-score-num card-info-text-style-two">{item.score}</p>
-      <p className="card-info-rank card-info-text-style-one">Ranked</p>
       <p className="card-info-rank-num card-info-text-style-two">{item.rank}</p>
-      <p className="card-info-pop card-info-text-style-one">Popularity:</p>
       <p className="card-info-pop-num card-info-text-style-two">{item.popularity}</p>
       </div>
 
       <div className="card-info-grid">
-      <p className="card-info-score card-info-text-style-one">Type</p>
+      <p className="card-info-score card-info-text-style-one card-grid-heading">Type</p>
       <p className="card-info-score-num card-info-text-style-two">{item.type}</p>
-      <p className="card-info-rank card-info-text-style-one">Episodes</p>
+      <p className="card-info-rank card-info-text-style-one card-grid-heading">Episodes</p>
       <p className="card-info-rank-num card-info-text-style-two">{item.episodes}</p>
-      <p className="card-info-pop card-info-text-style-one">Year</p>
+      <p className="card-info-pop card-info-text-style-one card-grid-heading">Year</p>
       <p className="card-info-pop-num card-info-text-style-two">{item.year}</p>
       </div>
 
@@ -55,11 +60,9 @@ function InfoCard({item}) {
       </div>
       
       </div>
-      <div className='second-information'>
 
-      </div>
-
-    </div>
+    </div>}
+    </>
   )
 }
 

@@ -9,7 +9,7 @@ import { GlobalContext } from "../App"
 
 function AnimeGenre({ cardSelect}) {
 
-    const {pagination, IncreasePage, DecreasePage, searchBar} = useContext(GlobalContext)
+    const {pagination, IncreasePage, DecreasePage, searchBar, navReset, items} = useContext(GlobalContext)
     const [contents, setContents] = useState([]);
     const param = useParams();
     
@@ -17,21 +17,31 @@ function AnimeGenre({ cardSelect}) {
     useEffect(() => {
       const searchedContent = async () =>
       {
-        const newContent = await fetch(`https://api.jikan.moe/v4/anime?order_by=score&sort=ascending&genres=${param.genre}&page=${pagination}&sfw`)
+        const newContent = await fetch(`https://api.jikan.moe/v4/anime?genres=${param.genre}&page=${pagination}&sfw`)
         .then(res => res.json())
         console.log(newContent.data)
         console.log('api called')
         setContents(newContent.data)
       }
     searchedContent(param.genre)
+    console.log("nav was reset")
+    navReset()
     },[param.genre,pagination])
 
   return (
     <>
     <Header />
-    { searchBar ? <SubHeader /> : null}
+    { searchBar ? <SubHeader /> : null} 
+    {
+    // Need to look into more rendering not showing loading when items === 0  
+    }
+    {(items.length !== [])  
+    ?<>
     <main className='container'>
     <Navbar />
+    <div className='genre-info'>
+      <h4 className='genre-info-text'>Sorted by Mal_Id due to API restrictions</h4>
+    </div>
     <CardList  items={contents} cardSelect={cardSelect}/>
     </main>
     <div className='buttons-page'>
@@ -39,7 +49,11 @@ function AnimeGenre({ cardSelect}) {
     <p>Page {pagination} </p>
     <button onClick={() =>IncreasePage(pagination)}>{pagination + 1}</button>
     </div>
-   
+    </>:
+    <main className='container'>
+    <h2 className='loading-data'>Loading...</h2>
+    </main>
+    }
     </>
   )
 }

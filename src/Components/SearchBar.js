@@ -15,9 +15,9 @@ function SearchBar() {
   return (
     <>
     <form onSubmit={searchSumbit}>
-    <input className="inputStyles"  input='text' value={searchInput} placeholder="Cat" 
+    <input className="inputStyles"  input='text' value={searchInput} placeholder="Pokemon" 
     onChange={searchAnime} />
-    <button className='input-buttonStyles' disabled={searchInput === ""} type="submit"><FontAwesomeIcon icon={faSearch} /></button> 
+    <button className='input-buttonStyles' on disabled={searchInput === ""} type="submit"><FontAwesomeIcon icon={faSearch} /></button> 
     </form>
     </>
   )

@@ -7,7 +7,7 @@ import { GlobalContext } from "../App"
 
 function Header() {
 
-  const { searchBar, openNav, displaySearchBar, navReset} = useContext(GlobalContext)
+  const { searchBar, openNav, displaySearchBar, navReset, paginationReset} = useContext(GlobalContext)
 
   return (
 
@@ -18,8 +18,8 @@ function Header() {
         <span className="burger"></span>
       </a>
       
-      <Link onClick={navReset} to={'/'}>
-      <h1 className="app-name">Anime List</h1>
+      <Link onClick={function(event){navReset(); paginationReset()}} to={'/'}>
+      <h1 className="app-name">Animi-Data</h1>
       </Link>
       <a className="buttonHeader" onClick={displaySearchBar}><FontAwesomeIcon icon={faSearch} /> </a>
      
