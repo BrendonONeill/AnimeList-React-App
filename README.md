@@ -1,4 +1,4 @@
-# Anime Tracking App
+# Animi-Data
 This is an app to look up anime that has or is airing, this uses the janki api that get information from the My Anime List website. It allows you to see what is the most rated or most loved anime, as well as sort out anime by their genres or search up a word to find a certain anime.  
 
 ## Lessons learned
