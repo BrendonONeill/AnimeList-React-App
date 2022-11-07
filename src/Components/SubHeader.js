@@ -1,12 +1,11 @@
-import SearchBar from "./SearchBar"
-
+import SearchBar from "./SearchBar";
 
 function SubHeader() {
   return (
     <header className="subHeader">
-        <SearchBar />
+      <SearchBar />
     </header>
-  )
+  );
 }
 
-export default SubHeader
+export default SubHeader;
