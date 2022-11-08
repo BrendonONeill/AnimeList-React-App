@@ -20,6 +20,8 @@ Cleaned up UI that was causing graphical bugs
 Added loading text while waiting for api respond.
 Fixed pagnation bug where it wasnt updating on some links.
 Fixed navbar activing when not clicked.
+Need to change where the api warning is displayed. 
+add a visual loading spinner when fetching data. 
 
 
 
