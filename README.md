@@ -12,7 +12,7 @@ I also learned that not using a framework and creating my own css took a long ti
 If I continue to improve this application I would like to add a feature to creat accounts to track different animes and rank your top animes. I would use firebase as the backend or if I feel up to the task I could use mongodb to store the information.
 
 ## Deployment
-This is not hosted yet as im still work out some bugs and UI issues
+It is hosted on Render
 
 ### Bug Fixes and updates
 
