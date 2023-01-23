@@ -13,21 +13,28 @@
 
   --black: #000;
   --white: #fff;
-  --black-blue: #102e4a;
-  --purple: #715aff;
-  --light-purple: #a682ff;
-  --blue: #5887ff;
-  --bg: #55c1ff;
+  --navbar-bg: #162240;
+  --filter-bg: #2D4480;
+  --light-orange: #FF8C73;
+  --blue: #0096C7;
+  --card-text: #e0e0e0;
+  
   --grey: #EAEAEA;
+
+  --bg: #CAF0F8;
+  --card-blue: #023E8A;
+  --body-colour: rgb(0, 0, 0);
+  --image-border: #023E8A;
 }
 
 body {
-  background: var(--white);
+  background: var(--body-colour);
   font-family: "Oswald", sans-serif;
 }
 
 img {
   width: 100%;
+  
 }
 
 .content-container {
@@ -42,7 +49,7 @@ img {
 .header {
   max-width: var(--max-width-px);
   width: 100%;
-  background-color: var(--black-blue);
+  background-color: var(--navbar-bg);
   color: white;
   padding: 1rem;
   font-size: 1.4rem;
@@ -72,7 +79,7 @@ img {
 .subHeader {
   max-width: var(--max-width-px);
   width: 100%;
-  background-color: var(--purple);
+  background-color: var(--filter-bg);
   color: white;
   position: fixed;
   z-index: 9;
@@ -94,7 +101,7 @@ img {
   font-size: 1rem;
   background-color: #fff;
   border-radius: 20px 0 0 20px;
-  border: 3px solid var(--black-blue);
+  border: 3px solid var(--navbar-bg);
   border-right: none;
   padding: 0.5rem 1rem;
 }
@@ -121,13 +128,14 @@ img {
   height: 100vh;
   padding: 1.5rem 0.6rem 12rem 0;
   border-radius: 0 5px 5px 0;
-  background-color: var(--purple);
+  background-color: var(--filter-bg);
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   grid-area: nav;
+  border-bottom: 20px solid var(--light-orange);
 }
 
 .filter-content {
@@ -188,8 +196,8 @@ img {
 
 /* card */
 .card {
-  background-color: var(--white);
-  color: var(--black);
+  background-color: var(--card-blue);
+  color: var(--card-text);
   margin-top: 50px;
   width: 160px;
   height: 260px;
@@ -208,6 +216,8 @@ img {
 
 .image-section img {
   border-radius: 20px 20px 0 0;
+  border: 3px solid var(--image-border);
+  border-bottom: none;
   width: 100%;
   height: 100%;
   object-fit: fill;
@@ -237,8 +247,8 @@ img {
   font-weight: bold;
   border-radius: 10px;
   padding: 0.4rem 1rem;
-  background-color: var(--light-purple);
-  color: white;
+  background-color: var(--light-orange);
+  color: var(--black);
 }
 
 .place {
@@ -254,7 +264,9 @@ img {
   justify-content: center;
   background-color: var(--grey);
   color: black;
-  border: 1px solid grey;
+  border: 3px solid var(--black);
+  border-top: none;
+  border-left: none;
   box-shadow: 0 5px 20px 5px #29193b;
 }
 
@@ -297,7 +309,7 @@ img {
 }
 
 .card-grid-heading {
-  background-color: var(--black-blue);
+  background-color: var(--navbar-bg);
   color: white;
 }
 
@@ -390,7 +402,7 @@ img {
 
 .card-info-button {
   padding: 0.8rem;
-  background-color: var(--blue);
+  background-color: var(--navbar-bg);
   color: #fff;
   text-decoration: none;
   border-radius: 10px;
@@ -427,13 +439,13 @@ img {
   align-items: center;
   margin: 50px auto;
   height: 60px;
-  background-color: #8d56c9;
+  background-color: var(--filter-bg);
   padding: 20px 10px;
   border-radius: 10px;
 }
 
 .buttons-page button {
-  background-color: #29193b;
+  background-color: var(--navbar-bg);
   color: white;
   padding: 10px;
   border-radius: 10px;
@@ -464,13 +476,6 @@ img {
   font-size: 3rem;
 }
 
-.genre-info {
-  background-color: #fff;
-  border-radius: 20px;
-  width: 45%;
-  margin: auto;
-  text-align: center;
-}
 
 @media only screen and (min-width: 500px) {
   .filter-bar {
