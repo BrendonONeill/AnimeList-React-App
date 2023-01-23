@@ -39,11 +39,6 @@ function AnimeGenre({ cardSelect }) {
           <>
             <main className="container">
               <Navbar />
-              <div className="genre-info">
-                <h4 className="genre-info-text">
-                  Sorted by Mal_Id due to API restrictions
-                </h4>
-              </div>
               <CardList items={contents} cardSelect={cardSelect} />
             </main>
             <div className="buttons-page">
