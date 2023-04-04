@@ -14,7 +14,7 @@ function AnimeSearch({ cardSelect }) {
   useEffect(() => {
     const searchedContent = async () => {
       const newContent = await fetch(
-        `https://nodeproxy-production.up.railway.app/animi/`,
+        `https://nodeproxy-production.up.railway.app/animi/search`,
         {
           headers: {
             name: `${param.name}`,
