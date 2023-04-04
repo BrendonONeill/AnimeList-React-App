@@ -16,10 +16,14 @@ function AnimeGenre({ cardSelect }) {
   useEffect(() => {
     const searchedContent = async () => {
       const newContent = await fetch(
-        `https://api.jikan.moe/v4/anime?genres=${param.genre}&page=${pagination}&sfw`
+        `https://nodeproxy-production.up.railway.app/animi/genre`,
+        {
+          headers: {
+            page: `${pagination}`,
+            genre: `${param.genre}`,
+          },
+        }
       ).then((res) => res.json());
-      console.log(newContent.data);
-      console.log("api called");
       setContents(newContent.data);
     };
     searchedContent(param.genre);

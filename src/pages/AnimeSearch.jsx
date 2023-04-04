@@ -14,7 +14,12 @@ function AnimeSearch({ cardSelect }) {
   useEffect(() => {
     const searchedContent = async () => {
       const newContent = await fetch(
-        `https://api.jikan.moe/v4/anime?q=${param.name}&sfw`
+        `https://nodeproxy-production.up.railway.app/animi/`,
+        {
+          headers: {
+            name: `${param.name}`,
+          },
+        }
       ).then((res) => res.json());
       console.log(newContent.data);
       setContents(newContent.data);
