@@ -18,7 +18,7 @@ function AnimeInfo({ AnimeSearch }) {
         `https://nodeproxy-production.up.railway.app/animi/id`,
         {
           headers: {
-            genre: `${params.id}`,
+            id: `${params.id}`,
           },
         }
       ).then((res) => res.json());
