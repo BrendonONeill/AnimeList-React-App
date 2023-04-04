@@ -57,9 +57,13 @@ function App() {
   useEffect(() => {
     const info = async () => {
       const infofetch = await fetch(
-        `https://api.jikan.moe/v4/top/anime?page=${pagination}`
+        `https://nodeproxy-production.up.railway.app/animi/`,
+        {
+          headers: {
+            page: `${pagination}`,
+          },
+        }
       ).then((res) => res.json());
-      console.log("This is an api call");
       setItems(infofetch.data);
     };
     info();
