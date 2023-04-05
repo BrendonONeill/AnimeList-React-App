@@ -14,24 +14,18 @@ function AnimeSearch({ cardSelect }) {
   useEffect(() => {
     const searchedContent = async () => {
       const newContent = await fetch(
-        `https://nodeproxy-production.up.railway.app/animi/search`,
-        {
-          headers: {
-            name: `${param.name}`,
-          },
-        }
+        `https://api.jikan.moe/v4/anime?q=${param.name}&sfw`
       ).then((res) => res.json());
-      console.log(newContent.data);
       setContents(newContent.data);
     };
     searchedContent(param.name);
-    console.log("nav was reset");
     navReset();
   }, [param.name]);
 
   useEffect(() => {
     paginationReset();
   }, []);
+
   return (
     <>
       <div className="content-container">

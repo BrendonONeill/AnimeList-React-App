@@ -17,12 +17,12 @@
   --filter-bg: #2D4480;
   --light-orange: #FF8C73;
   --blue: #0096C7;
-  --card-text: #e0e0e0;
+  --card-text: #000;
   
   --grey: #EAEAEA;
 
   --bg: #CAF0F8;
-  --card-blue: #023E8A;
+  --card-blue: #e9ecef;
   --body-colour: #fff;
   --image-border: #023E8A;
 }
@@ -176,6 +176,7 @@ img {
   padding-top: 4rem;
   display: grid;
   grid-template-areas: "cards";
+  min-height: 100vh;
 }
 
 .mainContainer {
@@ -469,11 +470,38 @@ img {
 }
 
 .loading-data {
-  color: #fff;
+  color: #000;
   margin: auto;
   max-width: 80%;
   text-align: center;
   font-size: 3rem;
+}
+
+.error
+{
+  padding: 2rem;
+  background-color: var(--card-blue);
+  color: #000;
+  width: 80%;
+  height: 20vh;
+  text-align: center;
+}
+
+.error p
+{
+  font-size: 2rem;
+}
+
+.error button
+{
+  width: 40%;
+  background-color: var(--light-orange);
+  color: #000;
+  margin-top: 1rem;
+  border: none;
+  border-radius: 20px;
+  font-weight: bold;
+  padding: 1rem 2rem;
 }
 
 

@@ -15,12 +15,7 @@ function AnimeInfo({ AnimeSearch }) {
   useEffect(() => {
     const test = async () => {
       const details = await fetch(
-        `https://nodeproxy-production.up.railway.app/animi/id`,
-        {
-          headers: {
-            id: `${params.id}`,
-          },
-        }
+        `https://api.jikan.moe/v4/anime/${params.id}/full`
       ).then((res) => res.json());
       setCardInfo(details.data);
     };
