@@ -2,6 +2,8 @@ import { useEffect, useState, createContext } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./App.css";
 import Pages from "./pages/Pages";
+import { ErrorBoundary } from "react-error-boundary";
+import ErrorPage from "./pages/ErrorPage";
 
 export const GlobalContext = createContext({});
 
@@ -57,13 +59,9 @@ function App() {
   useEffect(() => {
     const info = async () => {
       const infofetch = await fetch(
-        `https://nodeproxy-production.up.railway.app/animi/`,
-        {
-          headers: {
-            page: `${pagination}`,
-          },
-        }
+        `https://api.jikan.moe/v4/top/anime?page=${pagination}`
       ).then((res) => res.json());
+
       setItems(infofetch.data);
     };
     info();
@@ -74,7 +72,6 @@ function App() {
     if (searchBar === true) {
       setSearchBar(!searchBar);
     }
-    console.log("burger clicked");
     setActiveNav(!activeNav);
   };
 
@@ -112,7 +109,9 @@ function App() {
             paginationReset,
           }}
         >
-          <Pages />
+          <ErrorBoundary fallback={<ErrorPage />}>
+            <Pages />
+          </ErrorBoundary>
         </GlobalContext.Provider>
       </Router>
     </>

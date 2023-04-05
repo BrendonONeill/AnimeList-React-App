@@ -2,7 +2,6 @@ import CardList from "../Components/CardList";
 import Header from "../Components/Header";
 import Navbar from "../Components/Navbar";
 import SubHeader from "../Components/SubHeader";
-
 import { useParams } from "react-router-dom";
 import { useEffect, useState, useContext } from "react";
 import { GlobalContext } from "../App";
@@ -16,18 +15,11 @@ function AnimeGenre({ cardSelect }) {
   useEffect(() => {
     const searchedContent = async () => {
       const newContent = await fetch(
-        `https://nodeproxy-production.up.railway.app/animi/genre`,
-        {
-          headers: {
-            page: `${pagination}`,
-            genre: `${param.genre}`,
-          },
-        }
+        `https://api.jikan.moe/v4/anime?genres=${param.genre}&page=${pagination}&sfw`
       ).then((res) => res.json());
       setContents(newContent.data);
     };
     searchedContent(param.genre);
-    console.log("nav was reset");
     navReset();
   }, [param.genre, pagination]);
 
@@ -39,7 +31,7 @@ function AnimeGenre({ cardSelect }) {
         {
           // Need to look into more rendering not showing loading when items === 0
         }
-        {items.length !== [] ? (
+        {items.length !== 0 ? (
           <>
             <main className="container">
               <Navbar />
