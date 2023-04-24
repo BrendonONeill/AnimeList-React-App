@@ -56,23 +56,17 @@ function App() {
     setPagination(prevstate - 1);
   };
 
-   useEffect(() => {
+  useEffect(() => {
     const info = async () => {
       const infofetch = await fetch(
-        `https://concerned-shirt-dog.cyclic.app/animi/`,
-        {
-          headers: {
-            page: `${pagination}`,
-          },
-        }
+        `https://api.jikan.moe/v4/top/anime?page=${pagination}`
       ).then((res) => res.json());
+
       setItems(infofetch.data);
     };
     info();
     window.scrollTo(0, 0);
   }, [pagination]);
-
-
 
   const openNav = () => {
     if (searchBar === true) {
