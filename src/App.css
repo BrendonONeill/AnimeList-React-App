@@ -13,16 +13,16 @@
 
   --black: #000;
   --white: #fff;
-  --navbar-bg: #162240;
-  --filter-bg: #2D4480;
-  --light-orange: #FF8C73;
-  --blue: #0096C7;
+  --navbar-bg: #1f487e;
+  --filter-bg: #3c6997;
+  --light-orange: #e2711d;
+  --blue: #168aad;
   --card-text: #000;
-  
+
   --grey: #EAEAEA;
 
-  --bg: #CAF0F8;
-  --card-blue: #e9ecef;
+  --bg: white;
+  --card-blue: #d2d4c8;
   --body-colour: #fff;
   --image-border: #023E8A;
 }
@@ -34,7 +34,7 @@ body {
 
 img {
   width: 100%;
-  
+
 }
 
 .content-container {
@@ -151,8 +151,7 @@ img {
   border-bottom: 1px solid rgba(255, 255, 255, 0.534);
 }
 
-.block-cards
-{
+.block-cards {
   z-index: 5;
   position: absolute;
   top: 0;
@@ -217,7 +216,6 @@ img {
 
 .image-section img {
   border-radius: 20px 20px 0 0;
-  border: 3px solid var(--image-border);
   border-bottom: none;
   width: 100%;
   height: 100%;
@@ -257,7 +255,7 @@ img {
   top: -10px;
   left: -10px;
   font-weight: bold;
-  border-radius: 15px;
+  border-radius: 50%;
   height: 50px;
   width: 50px;
   display: flex;
@@ -266,8 +264,6 @@ img {
   background-color: var(--grey);
   color: black;
   border: 3px solid var(--black);
-  border-top: none;
-  border-left: none;
   box-shadow: 0 5px 20px 5px #29193b;
 }
 
@@ -293,8 +289,7 @@ img {
   width: 240px;
 }
 
-.info-img
-{
+.info-img {
   max-width: 80%;
   max-height: 80%;
 }
@@ -460,8 +455,7 @@ img {
   transform: scale(1.05);
 }
 
-.loading-container
-{
+.loading-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -477,8 +471,7 @@ img {
   font-size: 3rem;
 }
 
-.error
-{
+.error {
   padding: 2rem;
   background-color: var(--card-blue);
   color: #000;
@@ -487,13 +480,11 @@ img {
   text-align: center;
 }
 
-.error p
-{
+.error p {
   font-size: 2rem;
 }
 
-.error button
-{
+.error button {
   width: 40%;
   background-color: var(--light-orange);
   color: #000;
@@ -515,16 +506,17 @@ img {
     height: 300px;
   }
 
-  .image-info-container
-  {
+  .image-info-container {
     height: 500px;
     width: 370px;
   }
 }
 
 @media only screen and (min-width: 1000px) {
+
   .burger-section,
-  .burger,.block-cards {
+  .burger,
+  .block-cards {
     display: none;
   }
 
@@ -546,5 +538,4 @@ img {
   }
 }
 
-@media only screen and (min-width: 1600px) {
-}
+@media only screen and (min-width: 1600px) {}
