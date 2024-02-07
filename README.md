@@ -23,6 +23,9 @@ Fixed navbar activing when not clicked.
 Need to change where the api warning is displayed. 
 add a visual loading spinner when fetching data. 
 
+### Working on
 
-
-
+- Redesigning The UI
+- Re-writing structure of the code
+- Adding more information
+- More Features
