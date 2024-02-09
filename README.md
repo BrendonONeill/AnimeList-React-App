@@ -29,3 +29,4 @@ add a visual loading spinner when fetching data.
 - Re-writing structure of the code
 - Adding more information
 - More Features
+- Might create from scratch to improve bulk code that's not needed 
